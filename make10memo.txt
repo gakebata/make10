@@ -1,0 +1,27 @@
+(1+2-3)/4
+
+
+・　0デバイドの場合スキップする
+・　()が合わない時もスキップする
+　→ tryを使う
+
+・　()なしの場合
+・　()一つの場合
+・　()二つの場合
+
+strNum = input('number =') 1234
+
+lstComp = ['+','-','*','/']
+
+
+	for i in lstComp:
+		for j in lstComp:
+			for k in lstComp:
+				strEval = strNum[0] + lstComp[i] + strNum[1] + lstComp[j] + strNum[2] + lstComp[k] + strNum[3] 
+
+
+
+
+
+
+
