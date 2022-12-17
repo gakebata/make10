@@ -1,9 +1,8 @@
 
-# -------------------- 
-#　式を作り出す
 import itertools
 
-
+# -------------------- 
+#　式を作り出す
 def Make_formula(strNum):
 
     lstComp = ['+','-','*','/']
