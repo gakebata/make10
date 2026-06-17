@@ -13,10 +13,9 @@
 from __future__ import annotations
 
 import re
-from collections.abc import Iterator
+from collections.abc import Callable, Iterator
 from dataclasses import dataclass
 from fractions import Fraction
-from typing import Callable, Union
 
 # 演算子と、その二項演算の実装
 OPS: dict[str, Callable[[Fraction, Fraction], Fraction]] = {
@@ -47,7 +46,7 @@ class BinOp:
     right: Expr
 
 
-Expr = Union[Num, BinOp]
+Expr = Num | BinOp
 
 
 # -------------------- 入力の解釈 --------------------
