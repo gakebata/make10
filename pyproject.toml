@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "make10"
+version = "1.0.0"
+description = "入力した数字を四則演算して目標値 (既定 10) を作る式を列挙する"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "SHIMIZU Toshiaki" }]
+keywords = ["puzzle", "make10", "arithmetic", "game24"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.scripts]
+make10 = "make10.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/make10"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+src = ["src", "tests"]
+line-length = 100
+target-version = "py310"
+# 旧実装は参照用にそのまま保存しているため lint 対象外
+extend-exclude = ["make10_legacy.py"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "S"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101"]  # テストでの assert を許可
