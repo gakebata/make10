@@ -1,5 +1,5 @@
 /* make10 Service Worker — アプリシェルをキャッシュしオフライン動作させる */
-const CACHE = "make10-v2";
+const CACHE = "make10-v3";
 const ASSETS = [
   "./",
   "./index.html",

@@ -266,6 +266,21 @@ for (const [nums, tgt] of EXAMPLES) {
 $("solve").addEventListener("click", run);
 numsEl.addEventListener("keydown", e => { if (e.key === "Enter") run(); });
 targetEl.addEventListener("keydown", e => { if (e.key === "Enter") run(); });
+
+/* 入力欄をクリック/フォーカスしたら、入力済みの内容を全選択する。
+   フォーカス直後の mouseup による選択解除だけを抑止し、
+   2 回目以降のクリックは通常どおりカーソル移動できるようにする。 */
+function selectAllOnFocus(el) {
+  let justFocused = false;
+  el.addEventListener("focus", () => { justFocused = true; el.select(); });
+  el.addEventListener("mouseup", (e) => {
+    if (justFocused) { e.preventDefault(); justFocused = false; }
+  });
+  el.addEventListener("blur", () => { justFocused = false; });
+}
+selectAllOnFocus(numsEl);
+selectAllOnFocus(targetEl);
+
 numsEl.focus(); // 初期表示は空。入力欄にフォーカス
 
 /* PWA: Service Worker を登録してオフライン対応 */
