@@ -75,7 +75,7 @@
       <div>
         <label for="nums">数字</label>
         <input id="nums" type="text" inputmode="numeric" autocomplete="off"
-               autocapitalize="off" spellcheck="false" value="1234"
+               autocapitalize="off" spellcheck="false"
                placeholder="例: 1234 / 12 3 4">
       </div>
       <div>
@@ -229,6 +229,7 @@ function run() {
   const text = numsEl.value;
   const target = parseInt(targetEl.value, 10);
   countEl.innerHTML = ""; resultsEl.innerHTML = "";
+  if (!text.trim()) return; // 未入力時は何も表示しない
   if (!Number.isFinite(target)) { countEl.innerHTML = '<span class="err">目標値を入力してください</span>'; return; }
   let results;
   try {
@@ -265,7 +266,7 @@ for (const [nums, tgt] of EXAMPLES) {
 $("solve").addEventListener("click", run);
 numsEl.addEventListener("keydown", e => { if (e.key === "Enter") run(); });
 targetEl.addEventListener("keydown", e => { if (e.key === "Enter") run(); });
-run(); // 初期表示
+numsEl.focus(); // 初期表示は空。入力欄にフォーカス
 
 /* PWA: Service Worker を登録してオフライン対応 */
 if ("serviceWorker" in navigator) {
