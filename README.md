@@ -6,8 +6,9 @@
 
 **<https://gakebata.github.io/make10/>**
 
-スマートフォン (iPhone 等) でもそのまま動作します。Safari で開き、共有メニューから「ホーム画面に追加」するとアプリのように起動でき、オフラインでも利用できます。
-実体は依存ゼロの単一ファイル [docs/index.html](docs/index.html) で、コアロジックを JavaScript に移植し `BigInt` ベースの厳密分数で計算するため、Python 版と同様に浮動小数点誤差による取りこぼしはありません。
+スマートフォン (iPhone 等) でもそのまま動作します。実体は依存ゼロの単一ファイル [docs/index.html](docs/index.html) で、コアロジックを JavaScript に移植し `BigInt` ベースの厳密分数で計算するため、Python 版と同様に浮動小数点誤差による取りこぼしはありません。
+
+**PWA 対応** — Safari (iPhone) や Chrome で開き、共有メニューから「ホーム画面に追加」すると、アドレスバーのない全画面アプリとして起動できます。Service Worker がアプリ一式をキャッシュするため、一度読み込めば**以後はオフラインでも動作**します。
 
 ## 特長
 
