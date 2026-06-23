@@ -15,3 +15,6 @@ venv/
 
 # macOS
 .DS_Store
+
+# Claude Code のローカル設定
+.claude/

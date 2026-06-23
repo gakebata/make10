@@ -77,4 +77,4 @@ ruff check .    # lint
 
 ## ライセンス
 
-MIT
+[MIT License](LICENSE)

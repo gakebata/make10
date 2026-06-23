@@ -23,7 +23,8 @@ dev = ["pytest>=8", "ruff>=0.6"]
 make10 = "make10.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/"
+Homepage = "https://gakebata.github.io/make10/"
+Repository = "https://github.com/gakebata/make10"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/make10"]
