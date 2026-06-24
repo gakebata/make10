@@ -46,5 +46,10 @@ make10 1234                     # CLI 実行 (エントリポイントは make10
 
 ## 旧実装
 
-[make10_legacy.py](make10_legacy.py) はオリジナル実装の参照用保存。`eval`・桁数ハードコード・
-浮動小数点を含むため **ruff の対象外** (`pyproject.toml` の `extend-exclude`) であり、改修しない。
+歴史的経緯の保存として、初期の実装を 2 つそのまま残している (いずれも改修しない):
+
+- [make10_origin.py](make10_origin.py) — 最初期版。括弧が無く桁数ごとにループを手書きした原型。
+- [make10_legacy.py](make10_legacy.py) — その次の版。括弧パターンを加えた、現行ソルバーの直接の前身。
+
+どちらも `eval`・桁数ハードコード・浮動小数点を含むため **ruff の対象外**
+(`pyproject.toml` の `extend-exclude`) としている。

@@ -72,7 +72,11 @@ ruff check .    # lint
 
 ## 旧実装について
 
-オリジナルの実装は参照用に [`make10_legacy.py`](make10_legacy.py) として残しています。
+初期の実装は歴史的記録としてそのまま残しています。
+
+- [`make10_origin.py`](make10_origin.py) — 最初期版 (括弧なし)
+- [`make10_legacy.py`](make10_legacy.py) — 括弧パターンを加えた次の版
+
 桁数 1〜4 のハードコード・`eval` 依存・浮動小数点誤差・重複表示といった課題を、
 現行の [`src/make10/`](src/make10/) で解消しています。
 
